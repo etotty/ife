@@ -62,7 +62,7 @@ X=Xdot;
 
 %%%%% 2. Estimation
 % calculate XXinv outside of loop to save time
-[XXinv]= XXinv(X); 
+[XXinv]= xxinv(X); 
 
 betaIFE0=zeros(p,2);
 betaIFE=zeros(p,2);    % to contain the interative effect estimators, with different staring methods (2 methods)
@@ -96,10 +96,10 @@ end
 [betaIFE0(:,1), F1,L1, VNT1, e1, nnn(1,1),r1]=Mul_betaIterNew(X,XXinv, Y, F1,L1, r1,rmax,rfix, 0.00000001);
 sigma2(1,1)=trace(e1*e1')/(N*T-r1*(N+T)+r1^2-2);
 SSR(1,1)=trace(e1*e1');
-seIFE(:,1)=seIFE(X,F1,L1,e1);
+seIFE(:,1)=seife(X,F1,L1,e1);
 
 % correct beta for serial corr, cross-sec corr, and heteroskedasticity
-betaIFE(:,1)=biasIFE(X,F1,L1,e1,betaIFE0(:,1));
+betaIFE(:,1)=biasife(X,F1,L1,e1,betaIFE0(:,1));
 
 
 %%%%% 2b. Starting method 2:
@@ -115,10 +115,10 @@ end
 [betaIFE0(:,2), F2,L2, VNT2, e2, nnn(1,2),r2]=Mul_betaIterNew(X,XXinv, Y, F12,L12, r2,rmax,rfix, 0.00000001);
 sigma2(1,2)=trace(e2*e2')/(N*T-r2*(N+T)+r2^2-2);
 SSR(1,2)=trace(e2*e2');
-seIFE(:,2)=seIFE(X,F2,L2,e2);
+seIFE(:,2)=seife(X,F2,L2,e2);
 
 % correct beta for serial corr, cross-sec corr, and heteroskedasticity
-betaIFE(:,2)=biasIFE(X,F2,L2,e2,betaIFE0(:,2));
+betaIFE(:,2)=biasife(X,F2,L2,e2,betaIFE0(:,2));
 
 
 
