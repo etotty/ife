@@ -14,6 +14,8 @@
 %	(M<N) (i.e., grouping each county into a specific state). This is used for
 %	removing group rather than unit trends. Set S=0 if no grouping is
 %	necessary
+% demean = indicator for whether data should be demeaned first, to remove fixed effects 
+%	(0-no demeaning, 1-remove time FE, 2-remove unit FE, 3-remove both)
 % rmax = maximum number of factors allowed, when using information criterion to select number 
 %	of factors (Bai and Ng, 2002)
 % rfix = fixes the number of factors at rmax, rather than estimating the number via information 
