@@ -1,4 +1,4 @@
-% This function removes cross-sectionally demeans. I.e., removes time period fixed effects.
+% This function cross-sectionally demeans. I.e., removes time period fixed effects.
 
 function [Xdot, Ydot] = CSDemean(X,Y,RemoveFixedEffect)
 [T,N,p]=size(X);
