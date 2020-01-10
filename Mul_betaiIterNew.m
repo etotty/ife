@@ -1,7 +1,7 @@
 % Iterates between estimating factor structure given regressions coefficients, and vice-versa, until convergence. 
 
 % OUTPUT:
-% betainew: computed beta under iteration with error precision=tolerate
+% betainew: computed betas under iteration with error precision=tolerate
 % factor: estimated factor
 % lambda: estimated loadings
 % V: the eigenvalues matrix
@@ -12,11 +12,6 @@ function [betainew, factor, lambda, V, e, niter,r]=Mul_betaiIterNew(X, xxinv, Y,
    [T,N,p]=size(X);
    changeU2=1;
    sumU2old=.0000000001;
-
-%     tolerate=seIFEp*2.575;
-%     maxgap=seIFEp*10;
-
-% maxsqrtsumBetadiffsquared=1;
 
 n=0;   % number of iterations needed to stop
 while (changeU2  > tolerate & n < 300) 
@@ -33,20 +28,6 @@ while (changeU2  > tolerate & n < 300)
     sumU2=sum(U2(:));
     changeU2=(sumU2-sumU2old)/sumU2old;
     sumU2old=sumU2;
-
-%     gap=abs(betai-betaIFEp);
-%     maxgap=max(gap);
-
-%     Betadiff=zeros(p,N);
-%     for i=1:N
-%     for k=1:p
-%         Betadiff(k,i)=betai(k,i)-betaIFEp(k,1);
-%     end
-%     end
-%     Betadiffsquared=Betadiff.^2;
-%     sumBetadiffsquared=sum(Betadiffsquared,2);
-%     sqrtsumBetadiffsquared=sqrt(sumBetadiffsquared);
-%     maxsqrtsumBetadiffsquared=max(sqrtsumBetadiffsquared);
         
 
     if rfix==0
