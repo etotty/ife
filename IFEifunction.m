@@ -87,7 +87,7 @@ end
 [F1,L1,VNT]=panelFactorNew(U,r1);
 
 % Perform IFE iteration
-[betaiIFE(:,1:N), F1,L1, VNT1, e1, nnn(1,1),r1]=Mul_betaiIterNewET(X,XXinv, Y, F1,L1, r1,rmax,rfix, 0.00000001, betaIFEp, seIFEp);
+[betaiIFE(:,1:N), F1,L1, VNT1, e1, nnn(1,1),r1]=Mul_betaiIterNew(X,XXinv, Y, F1,L1, r1,rmax,rfix, 0.00000001, betaIFEp, seIFEp);
 sigma2(1,1)=trace(e1*e1')/(N*T-r1*(N+T)+r1^2-2);
 SSR(1,1)=trace(e1*e1');
 betaIFEH(:,1)=mean(betaiIFE0(:,1:N),2);
