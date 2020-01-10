@@ -20,8 +20,8 @@
 %	criterion
 
 % OUTPUTS:
-% betaIFE = (px1) vector of IFE regression coefficients
-% seIFE = (px1) vector of standard errors for IFE regression coefficients
+% betaIFE = (px2) vector of IFE regression coefficients for each starting method
+% seIFE = (px2) vector of standard errors for IFE regression coefficients for each starting methods
 % sigma2 = (1,2) vector of estimated residual variance for each starting method
 % SSR = (1,2) vector of final sum of squared residuals for each starting method
 % nnn = (1,2) vector of number of iterations before convergence for each starting method
