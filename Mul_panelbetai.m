@@ -1,4 +1,4 @@
-
+% computes heterogeneous coefficient OLS
 
 function [betai] = Mul_panelbetai(X, Y) 
    [T,N,p]=size(X);
