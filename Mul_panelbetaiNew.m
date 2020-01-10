@@ -1,4 +1,4 @@
-
+% Re-estimates heterogeneous OLS regression coefficients, given estimate of factor structure.
 
 
 function [betai] = Mul_panelbetaiNew(X, xxinv, Y, F,L) 
