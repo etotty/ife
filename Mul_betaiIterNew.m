@@ -1,12 +1,14 @@
+% Iterates between estimating factor structure given regressions coefficients, and vice-versa, until convergence. 
+
 % OUTPUT:
-% betanew: computed beta under iteration with error precision=tolerate
+% betainew: computed beta under iteration with error precision=tolerate
 % factor: estimated factor
 % lambda: estimated loadings
 % V: the eigenvalues matrix
 % e: estimated residuals
 % niter: number of interations to achieve convergence 
 
-function [betainew, factor, lambda, V, e, niter,r]=Mul_betaiIterNewET(X, xxinv, Y, F,L, r,rmax,rfix, tolerate, betaIFEp, seIFEp);
+function [betainew, factor, lambda, V, e, niter,r]=Mul_betaiIterNew(X, xxinv, Y, F,L, r,rmax,rfix, tolerate, betaIFEp, seIFEp);
    [T,N,p]=size(X);
    changeU2=1;
    sumU2old=.0000000001;
