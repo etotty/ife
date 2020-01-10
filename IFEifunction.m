@@ -57,7 +57,7 @@ end
 
 %%%%% 2. Estimation
 % calculate XXinv outside of loop to save time
-[XXinv]= Mul_XXinv(X); 
+[XXinv]= xxinv(X); 
 
 betaIFEH=zeros(p,2);
 betaiIFE=zeros(p,2*N);    % to contain the interative effect estimators, with different staring methods (2 methods)
